@@ -34,8 +34,8 @@ class CardComponent extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-        this.imgElement = this.shadowRoot.querySelector('img');
-        this.nameElement = this.shadowRoot.querySelector('h3');
+        this.imgElement = this.getAttribute("photo");
+        this.nameElement = this.getAttribute("name");
     }
 
     static get observedAttributes() {
@@ -51,4 +51,5 @@ class CardComponent extends HTMLElement {
     }
 }
 
-export default CardComponent;
+// Define the custom element
+customElements.define('card-component', CardComponent);
